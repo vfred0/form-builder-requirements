@@ -9,7 +9,7 @@ Form builder is a web application that allows creating forms for different purpo
 image::./images/0-domain-model/domain-model.svg[width=200]
 
 == Use cases and actors
-=== User Use Cases
+
 [cols="1,1,1", options="header"]
 |===
 | Form Structure | Form Data | Input
@@ -24,15 +24,18 @@ image::./images/1-requeriments/1-actors-use-cases/user/use-cases-context.svg[wid
 
 
 == Use cases specifications
-=== User Use Case Specifications
 
-[cols="1,1,1", options="header"]
+[cols="1,1", options="header"]
 |===
-| Form Structure Management | Form Data Management | Input Management
+| Form Structure Management | Form Data Management
 
 a|image::./images/1-requeriments/2-use-cases-specifications/user/form-structure-management.svg[]
 a|image::./images/1-requeriments/2-use-cases-specifications/user/form-data-management.svg[]
+
+| Input Management |
+
 a|image::./images/1-requeriments/2-use-cases-specifications/user/input-management.svg[]
+|
 |===
 
 
