@@ -21,8 +21,8 @@ state SAVE_FORM_STRUCTURE {
     CFS2 --> CFS3
     note on link
         <b>System allows to:</b>
-        * Save form structure
-        * Update form structure
+        * Save
+        * Update
     end note
 
     CFS3 --> CFC2
@@ -30,15 +30,18 @@ state SAVE_FORM_STRUCTURE {
     CFC2 -[#green]-> CFC1
     note on link
         <b>System shows:</b>
-        Form created successfully
+        Saved successfully
     end note
 
     CFC2 -[#red]-> CFS2
     note on link
         <b>System requires:</b>
-        * Required one or more inputs
-        * Required name with at least 3 characters
-        * Required description with at least 10 characters
+        * Required one or
+         more inputs
+        * Required name with
+         at least 3 characters
+        * Required description
+         with at least 10 characters
     end note
 
     CFC1 --> CFS2 
@@ -56,7 +59,8 @@ state DELETE_FORM_STRUCTURE {
     DFS1 --> DFS2
     note on link
         <b>System requires:</b>
-        * Confirmation of deletion all forms with this structure
+        * Confirmation of deletion 
+        all forms with this structure
     end note
 
 
@@ -65,7 +69,7 @@ state DELETE_FORM_STRUCTURE {
     DFC2 -[#green]-> DFC1
     note on link
         <b>System shows:</b>
-        Form structure deleted successfully
+        Deleted successfully
     end note
 
     DFC2 -[#red]-> DFS1

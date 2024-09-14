@@ -24,8 +24,8 @@ state SAVE_INPUT {
     IMS2 --> IMS3
     note on link
         <b>System allows to:</b>
-        * Save input
-        * Update input
+        * Save
+        * Update
     end note
 
     IMS3 --> IMC2
@@ -33,16 +33,20 @@ state SAVE_INPUT {
     IMC2 -[#green]-> IMC1
     note on link
         <b>System shows:</b>
-        Input operation successful
+        Saved successfully
     end note
 
     IMC2 -[#red]-> IMS2
     note on link
         <b>System requires:</b>
-        * Valid input selection for update
-        * Name with at least 3 characters
-        * Valid data type selection
-        * Required field must be boolean
+        * Valid input 
+        selection for update
+        * Name with at 
+        least 3 characters
+        * Valid data 
+        type selection
+        * Required field
+         must be boolean
     end note
 
     IMC1 --> IMS2
@@ -60,7 +64,8 @@ state DELETE_INPUT {
     DIM1 --> DIM2
     note on link
         <b>System requires:</b>
-        * Confirmation of form deletion if input is in use
+        * Confirmation of form 
+          deletion if input is in use
     end note
 
     DIM2 --> DMC2
@@ -68,7 +73,7 @@ state DELETE_INPUT {
     DMC2 -[#green]-> DMC1
     note on link
         <b>System shows:</b>
-        Input deleted successfully
+        Deleted successfully
     end note
 
     DMC2 -[#red]-> DIM1

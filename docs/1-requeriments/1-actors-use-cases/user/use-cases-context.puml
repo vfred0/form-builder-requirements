@@ -9,27 +9,27 @@ OPENED_FORM_BUILDER --> OPENED_FORM_DATA_MANAGEMENT
 
 OPENED_INPUT_MANAGEMENT --> OPENED_INPUT_MANAGEMENT
 note on link
-  * Save Input
-  * Update Input
-  * Delete Input
-  * Show Input
+  * Save
+  * Update
+  * Delete
+  * Show
 end note
 
 OPENED_FORM_STRUCTURE_MANAGEMENT --> OPENED_FORM_STRUCTURE_MANAGEMENT
 note on link
-  * Save Form Structure
-  * Update Form Structure
-  * Delete Form Structure
-  * Show Form Structure
+  * Save
+  * Update
+  * Delete
+  * Show
 end note
 OPENED_FORM_STRUCTURE_MANAGEMENT --> OPENED_INPUT_MANAGEMENT
 
 OPENED_FORM_DATA_MANAGEMENT --> OPENED_FORM_DATA_MANAGEMENT
 note on link
-  * Save Form
-  * Update Form
-  * Delete Form
-  * Show Form
+  * Save
+  * Update
+  * Delete
+  * Show
 end note
 
 OPENED_INPUT_MANAGEMENT --> [*]
