@@ -1,0 +1,83 @@
+@startuml form-structure-management
+[*] --> OPENED_FORM_STRUCTURE_MANAGEMENT
+!include ../../../utils/settings.puml
+skinparam linetype polyline
+state SAVE_FORM_STRUCTURE {
+    state CFS1 as " "
+    state CFS2 as " "
+    state CFS3 as " "
+    state CFC1 <<choice>>
+    state CFC2 <<choice>>
+
+    [*] --> CFS1
+
+    CFS1 --> CFS2
+    note on link
+        <b>System requires:</b>
+        * Name
+        * Description
+        * Inputs
+    end note
+    CFS2 --> CFS3
+    note on link
+        <b>System allows to:</b>
+        * Save form structure
+        * Update form structure
+    end note
+
+    CFS3 --> CFC2
+
+    CFC2 -[#green]-> CFC1
+    note on link
+        <b>System shows:</b>
+        Form created successfully
+    end note
+
+    CFC2 -[#red]-> CFS2
+    note on link
+        <b>System requires:</b>
+        * Required one or more inputs
+        * Required name with at least 3 characters
+        * Required description with at least 10 characters
+    end note
+
+    CFC1 --> CFS2 
+    CFC1 --> [*]
+}
+
+state DELETE_FORM_STRUCTURE {
+    state DFS1 as " "
+    state DFS2 as " "
+    state DFC1 <<choice>>
+    state DFC2 <<choice>>
+
+    [*] --> DFS1
+
+    DFS1 --> DFS2
+    note on link
+        <b>System requires:</b>
+        * Confirmation of deletion all forms with this structure
+    end note
+
+
+    DFS2 --> DFC2
+
+    DFC2 -[#green]-> DFC1
+    note on link
+        <b>System shows:</b>
+        Form structure deleted successfully
+    end note
+
+    DFC2 -[#red]-> DFS1
+
+
+    DFC1 --> DFS1
+    DFC1 --> [*]
+}
+
+OPENED_FORM_STRUCTURE_MANAGEMENT --> DELETE_FORM_STRUCTURE
+OPENED_FORM_STRUCTURE_MANAGEMENT --> SAVE_FORM_STRUCTURE
+DELETE_FORM_STRUCTURE --> [*]
+SAVE_FORM_STRUCTURE --> [*]
+
+@enduml

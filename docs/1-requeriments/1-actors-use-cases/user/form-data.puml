@@ -1,0 +1,15 @@
+@startuml form-data
+!include ../../../utils/settings.puml
+
+left to right direction
+actor User
+User --> (FormDataSave)
+User --> (FormDataUpdate)
+User --> (FormDataDelete)
+User --> (FormDataShow)
+
+(FormDataSave) ..> (FormDataShow) : include
+(FormDataUpdate) ..> (FormDataShow) : include
+(FormDataDelete) ..> (FormDataShow) : include
+
+@enduml 

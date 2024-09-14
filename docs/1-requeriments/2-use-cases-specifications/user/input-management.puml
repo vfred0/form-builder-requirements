@@ -1,0 +1,88 @@
+
+@startuml input-management
+[*] --> OPENED_INPUT_MANAGEMENT
+
+!include ../../../utils/settings.puml
+
+state SAVE_INPUT {
+    state IMS1 as " "
+    state IMS2 as " "
+    state IMS3 as " "
+    state IMC1 <<choice>>
+    state IMC2 <<choice>>
+
+    [*] --> IMS1
+
+    IMS1 --> IMS2
+    note on link
+        <b>System requires:</b>
+        * Name
+        * Data type
+        * Required
+    end note
+
+    IMS2 --> IMS3
+    note on link
+        <b>System allows to:</b>
+        * Save input
+        * Update input
+    end note
+
+    IMS3 --> IMC2
+
+    IMC2 -[#green]-> IMC1
+    note on link
+        <b>System shows:</b>
+        Input operation successful
+    end note
+
+    IMC2 -[#red]-> IMS2
+    note on link
+        <b>System requires:</b>
+        * Valid input selection for update
+        * Name with at least 3 characters
+        * Valid data type selection
+        * Required field must be boolean
+    end note
+
+    IMC1 --> IMS2
+    IMC1 --> [*]
+}
+
+state DELETE_INPUT {
+    state DIM1 as " "
+    state DIM2 as " "
+    state DMC1 <<choice>>
+    state DMC2 <<choice>>
+
+    [*] --> DIM1
+
+    DIM1 --> DIM2
+    note on link
+        <b>System requires:</b>
+        * Confirmation of form deletion if input is in use
+    end note
+
+    DIM2 --> DMC2
+
+    DMC2 -[#green]-> DMC1
+    note on link
+        <b>System shows:</b>
+        Input deleted successfully
+    end note
+
+    DMC2 -[#red]-> DIM1
+
+
+    DMC1 --> DIM1
+    DMC1 --> [*]
+}
+
+
+OPENED_INPUT_MANAGEMENT --> SAVE_INPUT
+OPENED_INPUT_MANAGEMENT --> DELETE_INPUT
+
+SAVE_INPUT --> [*]
+DELETE_INPUT --> [*]
+
+@enduml

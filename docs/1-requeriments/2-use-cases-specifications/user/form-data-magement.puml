@@ -1,0 +1,77 @@
+@startuml form-data-management
+[*] --> OPENED_FORM_DATA_MANAGEMENT
+!include ../../../utils/settings.puml
+skinparam linetype polyline
+state SAVE_FORM_DATA {
+    state CF1 as " "
+    state CF2 as " "
+    state CF3 as " "
+    state CFC1 <<choice>>
+    state CFC2 <<choice>>
+
+    [*] --> CF1
+
+    CF1 --> CF2
+    note on link
+        <b>System requires:</b>
+        * Insert form data
+    end note
+    CF2 --> CF3
+    note on link
+        <b>System allows to:</b>
+        * Save form data
+        * Update form data
+    end note
+
+    CF3 --> CFC2
+
+    CFC2 -[#green]-> CFC1
+    note on link
+        <b>System shows:</b>
+        Form data saved successfully
+    end note
+
+    CFC2 -[#red]-> CF2
+    note on link
+        <b>System requires:</b>
+        * Required form data
+    end note
+
+    CFC1 --> CF2 
+    CFC1 --> [*]
+}
+
+state DELETE_FORM_DATA {
+    state DF1 as " "
+    state DF2 as " "
+    state DFC1 <<choice>>
+    state DFC2 <<choice>>
+
+    [*] --> DF1
+
+    DF1 --> DF2
+    note on link
+        <b>System requires:</b>
+        * Confirmation of deletion of form data
+    end note
+
+    DF2 --> DFC2
+
+    DFC2 -[#green]-> DFC1
+    note on link
+        <b>System shows:</b>
+        Form data deleted successfully
+    end note
+
+    DFC2 -[#red]-> DF1
+
+    DFC1 --> DF1
+    DFC1 --> [*]
+}
+
+OPENED_FORM_DATA_MANAGEMENT --> DELETE_FORM_DATA
+OPENED_FORM_DATA_MANAGEMENT --> SAVE_FORM_DATA
+DELETE_FORM_DATA --> [*]
+SAVE_FORM_DATA --> [*]
+
+@enduml

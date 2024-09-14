@@ -1,0 +1,14 @@
+@startuml form-structure
+!include ../../../utils/settings.puml
+
+left to right direction
+actor User
+User --> (FormStructureSave)
+User --> (FormStructureUpdate)
+User --> (FormStructureDelete)
+User --> (FormStructureShow)
+
+(FormStructureSave) ..> (FormStructureShow) : include
+(FormStructureUpdate) ..> (FormStructureShow) : include
+
+@enduml 

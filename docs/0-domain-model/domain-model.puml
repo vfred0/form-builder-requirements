@@ -1,0 +1,22 @@
+@startuml domain-model
+
+!include ../utils/cardinality.puml
+!include ../utils/settings.puml
+
+class FormStructure {
+    +id: string
+    +name: string
+    +description: string
+}
+
+class Input {
+    +id: string
+    +name: string
+    +dataType: string
+    +required: boolean
+}
+
+compositionRelation(FormBuilder, FormStructure, ONE_TO_MANY)
+compositionRelation(FormStructure, Input, ONE_TO_MANY)
+associationRelation(FormData, FormStructure, ONE_TO_ONE)
+@enduml

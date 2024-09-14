@@ -1,0 +1,40 @@
+@startuml use-cases-context
+!include ../../../utils/settings.puml
+skinparam linetype polyline
+
+[*] --> OPENED_FORM_BUILDER
+
+OPENED_FORM_BUILDER --> OPENED_FORM_STRUCTURE_MANAGEMENT
+OPENED_FORM_BUILDER --> OPENED_FORM_DATA_MANAGEMENT
+
+OPENED_INPUT_MANAGEMENT --> OPENED_INPUT_MANAGEMENT
+note on link
+  * Save Input
+  * Update Input
+  * Delete Input
+  * Show Input
+end note
+
+OPENED_FORM_STRUCTURE_MANAGEMENT --> OPENED_FORM_STRUCTURE_MANAGEMENT
+note on link
+  * Save Form Structure
+  * Update Form Structure
+  * Delete Form Structure
+  * Show Form Structure
+end note
+OPENED_FORM_STRUCTURE_MANAGEMENT --> OPENED_INPUT_MANAGEMENT
+
+OPENED_FORM_DATA_MANAGEMENT --> OPENED_FORM_DATA_MANAGEMENT
+note on link
+  * Save Form
+  * Update Form
+  * Delete Form
+  * Show Form
+end note
+
+OPENED_INPUT_MANAGEMENT --> [*]
+OPENED_FORM_STRUCTURE_MANAGEMENT --> [*]
+OPENED_FORM_DATA_MANAGEMENT --> [*]
+OPENED_FORM_BUILDER --> [*]
+
+@enduml

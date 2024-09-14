@@ -1,0 +1,14 @@
+@startuml input
+!include ../../../utils/settings.puml
+
+left to right direction
+actor User
+User --> (InputSave)
+User --> (InputUpdate)
+User --> (InputDelete)
+User --> (InputShow)
+
+(InputSave) ..> (InputShow) : include
+(InputUpdate) ..> (InputShow) : include
+
+@enduml 
