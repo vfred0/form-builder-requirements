@@ -1,0 +1,36 @@
+@startuml erd
+
+!include ../utils/cardinality.puml
+!include ../utils/settings.puml
+
+entity form_structures {
+    *id : UUID <<PK>> <<not null>>
+    --
+    name : varchar <<not null>>
+    description : varchar <<not null>>
+}
+
+entity inputs {
+    *id : UUID <<PK>> <<not null>>
+    --
+    name : varchar <<not null>>
+    data_type : varchar <<not null>>
+    value : varchar <<null>>
+    required : boolean <<not null>>
+}
+
+entity form_datas {
+    *id : UUID <<PK>> <<not null>>
+    form_structure_id : UUID <<FK>> <<not null>>
+}
+
+entity form_structure_inputs {
+    *form_structure_id : UUID <<FK>> <<not null>>
+    *input_id : UUID <<FK>> <<not null>>
+}
+
+form_structures ||--|{ form_structure_inputs
+form_structure_inputs }|--|| inputs
+form_structures ||-left-{ form_datas
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml deployment
+
+Actor User
+node "Client" {
+    component Angular <<Frontend>>
+}
+node "Server" {
+    node WebServer
+    component FormBuilderAPI <<API REST>>
+    component "ASP.NET Core" <<Framework>>
+    component "SQL Server" <<Database>>
+}
+
+User -> Angular
+Angular -> WebServer : http
+WebServer -right-> FormBuilderAPI 
+FormBuilderAPI .down.> "ASP.NET Core" 
+FormBuilderAPI ..> "SQL Server"
+WebServer -down-> "SQL Server" 
+WebServer -down-> "ASP.NET Core"
+@enduml

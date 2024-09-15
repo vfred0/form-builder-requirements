@@ -38,5 +38,26 @@ a|image::./images/1-requeriments/2-use-cases-specifications/user/input-managemen
 |
 |===
 
+= Design 
+
+== Entity-Relationship Diagram
+image::./images/3-design/erd.svg[width=500]
 
 
+
+== Screenshots
+image::./images/form-builder-page-1.png[]
+image::./images/form-builder-page-2.png[]
+image::./images/form-builder-page-3.png[]
+image::./images/form-builder-page-4.png[]
+
+
+
+== Repositories
+=== Backend
+
+github::https://github.com/vfred0/form-builder-backend
+
+
+=== Frontend
+github::https://github.com/vfred0/form-builder-frontend
