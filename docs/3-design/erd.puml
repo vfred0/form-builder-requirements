@@ -19,11 +19,6 @@ entity inputs {
     required : boolean <<not null>>
 }
 
-entity form_datas {
-    *id : UUID <<PK>> <<not null>>
-    form_structure_id : UUID <<FK>> <<not null>>
-}
-
 entity form_structure_inputs {
     *form_structure_id : UUID <<FK>> <<not null>>
     *input_id : UUID <<FK>> <<not null>>
@@ -31,6 +26,5 @@ entity form_structure_inputs {
 
 form_structures ||--|{ form_structure_inputs
 form_structure_inputs }|--|| inputs
-form_structures ||-left-{ form_datas
 
 @enduml

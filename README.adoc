@@ -50,6 +50,7 @@ image::./images/form-builder-page-1.png[]
 image::./images/form-builder-page-2.png[]
 image::./images/form-builder-page-3.png[]
 image::./images/form-builder-page-4.png[]
+image::./images/form-builder-page-5.png[]
 
 
 
