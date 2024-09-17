@@ -6,16 +6,16 @@ node "Client" {
 }
 node "Server" {
     node WebServer
-    component FormBuilderAPI <<API REST>>
+    component FormBuilder <<API REST>>
     component "ASP.NET Core" <<Framework>>
-    component "SQL Server" <<Database>>
+    component "PostgreSQL" <<Database>>
 }
 
 User -> Angular
 Angular -> WebServer : http
-WebServer -right-> FormBuilderAPI 
-FormBuilderAPI .down.> "ASP.NET Core" 
-FormBuilderAPI ..> "SQL Server"
-WebServer -down-> "SQL Server" 
+WebServer -right-> FormBuilder 
+FormBuilder .down.> "ASP.NET Core" 
+FormBuilder ..> "PostgreSQL"
+WebServer -down-> "PostgreSQL" 
 WebServer -down-> "ASP.NET Core"
 @enduml

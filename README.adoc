@@ -46,11 +46,12 @@ image::./images/3-design/erd.svg[width=500]
 
 
 == Screenshots
-image::./images/form-builder-page-1.png[]
-image::./images/form-builder-page-2.png[]
-image::./images/form-builder-page-3.png[]
-image::./images/form-builder-page-4.png[]
-image::./images/form-builder-page-5.png[]
+image::./images/screenshots/1.png[]
+image::./images/screenshots/2.png[]
+image::./images/screenshots/3.png[]
+image::./images/screenshots/4.png[]
+image::./images/screenshots/5.png[]
+image::./images/screenshots/6.png[]
 
 
 

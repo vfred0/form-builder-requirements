@@ -15,13 +15,14 @@ entity inputs {
     --
     name : varchar <<not null>>
     data_type : varchar <<not null>>
-    value : varchar <<null>>
     required : boolean <<not null>>
 }
 
 entity form_structure_inputs {
     *form_structure_id : UUID <<FK>> <<not null>>
     *input_id : UUID <<FK>> <<not null>>
+    --
+    *value : varchar <<null>>
 }
 
 form_structures ||--|{ form_structure_inputs
